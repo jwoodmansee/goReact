@@ -16,7 +16,7 @@ func index(w http.ResponseWriter, r *http.Request) {
 
 func newRouter() *mux.Router {
 	r := mux.NewRouter()
-	r.HandleFunc("/index", index).Methods("GET")
+	r.HandleFunc("/{searchParams}", index).Methods("GET")
 
 	staticFileDirectory := http.Dir("./dist")
 	staticFileHandler := http.StripPrefix("/dist/", http.FileServer(staticFileDirectory))
