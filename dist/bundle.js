@@ -19919,17 +19919,24 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Home = function (_Component) {
   _inherits(Home, _Component);
 
-  function Home() {
+  function Home(props) {
     _classCallCheck(this, Home);
 
-    return _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this, props));
+
+    _this.getAmpData = _this.getAmpData.bind(_this);
+    return _this;
   }
 
   _createClass(Home, [{
     key: 'getAmpData',
     value: function getAmpData() {
-      var apiUrl = 'http://localhost:8080/';
-      _axios2.default.get(apiUrl + '{sreachParams}').then(function (response) {
+      var params = this.refs.searchParams.value;
+      (0, _axios2.default)({
+        method: 'get',
+        url: 'http://localhost:8080/search/' + params,
+        responseType: 'json'
+      }).then(function (response) {
         console.log(response);
       }).catch(function (error) {
         console.log(error);
@@ -19944,7 +19951,7 @@ var Home = function (_Component) {
         _react2.default.createElement(
           'div',
           null,
-          _react2.default.createElement('input', { type: 'text', refs: 'sreachParams' })
+          _react2.default.createElement('input', { type: 'text', ref: 'searchParams' })
         ),
         _react2.default.createElement(
           'div',

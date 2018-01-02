@@ -2,12 +2,20 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 class Home extends Component {
+  constructor(props) {
+    super(props);
+    this.getAmpData = this.getAmpData.bind(this);
+  }
 
-  
+
 
   getAmpData() {
-    var apiUrl = 'http://localhost:8080/'
-    axios.get(apiUrl + `{sreachParams}`)
+    let params = this.refs.searchParams.value;
+    axios({
+      method:'get',
+      url:`http://localhost:8080/search/${params}`,
+      responseType:'json'
+    })
     .then(function (response) {
       console.log(response)
     })
@@ -21,7 +29,7 @@ class Home extends Component {
     return(
       <div>
         <div>
-          <input type='text' refs='sreachParams'></input>
+          <input type='text' ref='searchParams'></input>
         </div>
         <div>
           <button type='submit' onClick={this.getAmpData}>Submit</button>
