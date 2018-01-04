@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+
 class Home extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      ampInfo: []
+    }
+
     this.getAmpData = this.getAmpData.bind(this);
+
+
   }
 
 
@@ -16,11 +23,9 @@ class Home extends Component {
       url:`http://localhost:8080/search/${params}`,
       responseType:'json'
     })
-    .then(function (response) {
-      console.log(response)
-    })
-    .catch(function (error) {
-      console.log(error)
+    .then(res =>{
+      this.setState({ ampInfo: res.data });
+      console.log(this.state)
     });
   }
 
@@ -34,6 +39,11 @@ class Home extends Component {
         <div>
           <button type='submit' onClick={this.getAmpData}>Submit</button>
         </div>
+        <ol>
+          {this.state.ampInfo.map(amp =>
+            <li key={amp.id}>{amp.band}</li>
+          )}
+        </ol>
       </div>
     )
   }
