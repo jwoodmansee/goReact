@@ -19975,7 +19975,7 @@ var Home = function (_Component) {
             return _react2.default.createElement(
               'li',
               { key: amp.id },
-              amp.band
+              amp.id.band
             );
           })
         )

@@ -41,7 +41,7 @@ class Home extends Component {
         </div>
         <ol>
           {this.state.ampInfo.map(amp =>
-            <li key={amp.id}>{amp.band}</li>
+            <li key={amp.id}>{amp.id.band}</li>
           )}
         </ol>
       </div>

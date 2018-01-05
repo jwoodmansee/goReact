@@ -64,7 +64,7 @@ func sqlQuery(ampBom string) []byte {
 	log.Println(queryParams)
 
 	log.Println("Enter SqlQuery")
-	dsn := "server=dbcluster1;user id=testlogin;password=t3stin9;database=WeBooster"
+	dsn := ""
 	db, err := sql.Open("mssql", dsn)
 	if err != nil {
 		fmt.Println("Cannot connect: ", err.Error())
