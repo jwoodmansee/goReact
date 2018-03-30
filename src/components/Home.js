@@ -43,19 +43,18 @@ class Home extends Component {
 
   render() {
     return(
-      <div className='container'>
-        <form ref='form' onSubmit={this.getAmpData}>
-          <div>
-            <input type='text' ref='searchParams' value={this.state.modelBom} onChange={this.setAmpModel}/>
-          </div>
-          <div>
-            <button type='submit'>Submit</button>
-          </div>
-        </form>
-
-        <h3>{this.state.modelBom}</h3>
-
-        <AmpTable specs={this.state.specs}/>
+      <div>
+        <div>
+          <input type='text' ref='searchParams'></input>
+        </div>
+        <div>
+          <button type='submit' onClick={this.getAmpData}>Submit</button>
+        </div>
+        <ol>
+          {this.state.ampInfo.map(amp =>
+            <li key={amp.id}>{amp.id.band}</li>
+          )}
+        </ol>
       </div>
     )
   }

@@ -68,19 +68,19 @@ func sqlQuery(ampBom string) []byte {
 	defer db.Close()
 
 	data, err := db.Query(`
-		SELECT am.[model] AS Model, 
-			   bm.[name] AS Bom, 
-			   bi.[bandnumber] AS Band, 
-			   d.[name] AS Direction, 
-			   ts.[name] AS TestName, 
-			   ts.[lowerlimit] AS LowLimit, 
-			   ts.[upperlimit] AS UpLimit, 
-			   ts.[eeprom_lowerlimit] AS LEeprom, 
-			   ts.[eeprom_upperlimit] AS UEeprom, 
-			   ts.[inputpower] AS IP, ts.target AS Target, 
-			   ts.[lowerfrequency] AS Lfrequency, 
-			   ts.[upperfrequency] AS Ufrequency, 
-			   ts.[operatingvoltage] AS Voltage, 
+		SELECT am.[model] AS Model,
+			   bm.[name] AS Bom,
+			   bi.[bandnumber] AS Band,
+			   d.[name] AS Direction,
+			   ts.[name] AS TestName,
+			   ts.[lowerlimit] AS LowLimit,
+			   ts.[upperlimit] AS UpLimit,
+			   ts.[eeprom_lowerlimit] AS LEeprom,
+			   ts.[eeprom_upperlimit] AS UEeprom,
+			   ts.[inputpower] AS IP, ts.target AS Target,
+			   ts.[lowerfrequency] AS Lfrequency,
+			   ts.[upperfrequency] AS Ufrequency,
+			   ts.[operatingvoltage] AS Voltage,
 			   ts.[connectortype] AS Connectors
 		FROM [Manufacturing].[dbo].[TestSpec] AS ts
 		LEFT JOIN [Manufacturing].[dbo].[Band] AS b ON b.[band_id] = ts.[band_id]
