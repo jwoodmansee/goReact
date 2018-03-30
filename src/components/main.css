@@ -1,0 +1,31 @@
+:local(.container) {
+  display: grid;
+  align-content: center;
+  grid-template-columns: 300px 200px 100px;
+  margin: 75px 100px 100px
+}
+
+:local(.form_input)  {
+  grid-column: 2 / 3;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+:local(.btn_submit) {
+  grid-column: 2 / 3;
+  margin-left: auto;
+  margin-right: auto
+}
+
+:local(.table_container) {
+  position: fixed;
+  margin: 150px 0px
+}
+
+:local(.table) {
+  border: 1px
+}
+
+:local(.modelBom) {
+  margin: 0px
+}
