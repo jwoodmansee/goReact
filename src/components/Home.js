@@ -44,17 +44,7 @@ class Home extends Component {
   render() {
     return(
       <div>
-        <div>
-          <input type='text' ref='searchParams'></input>
-        </div>
-        <div>
-          <button type='submit' onClick={this.getAmpData}>Submit</button>
-        </div>
-        <ol>
-          {this.state.ampInfo.map(amp =>
-            <li key={amp.id}>{amp.id.band}</li>
-          )}
-        </ol>
+        <h1>Hello World!</h1>
       </div>
     )
   }

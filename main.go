@@ -55,6 +55,7 @@ func GetAmpSpecs(w http.ResponseWriter, r *http.Request) {
 }
 
 func sqlQuery(ampBom string) []byte {
+	dsn := "Data source"
 	queryParams := queryParams{
 		model: ampBom[0 : len(ampBom)-1],
 		bom:   ampBom[len(ampBom)-1:],
