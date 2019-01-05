@@ -215,9 +215,19 @@ func newRouter() *mux.Router {
 }
 
 func main() {
-	cmd := exec.Command("webpack")
+	cmd := exec.Command("npm install")
 	log.Printf("Starting up Server")
 	err := cmd.Run()
+	if err != nil {
+		log.Fatal("NPM DIDN'T WORK!!", err.Error())
+	}
+	if err == nil {
+		md := exec.Command("webpack")
+		d := md.Run()
+		if d == nil {
+			log.Fatal("broke on the webpack command")
+		}
+	}
 	log.Printf("Command finished with error: %v", err)
 
 	fmt.Println("Server is running")
