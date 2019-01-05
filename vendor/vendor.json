@@ -3,6 +3,12 @@
 	"ignore": "test",
 	"package": [
 		{
+			"checksumSHA1": "NkpNQgmrdzGr9HUDL8Bp5YAxt0k=",
+			"path": "cloud.google.com/go/civil",
+			"revision": "63e33b4a8202fd051c4491b1f576d8d0532ca1ca",
+			"revisionTime": "2018-12-28T11:37:05Z"
+		},
+		{
 			"checksumSHA1": "0rXUgJC/GgF8XbLxmJiMgC4peQQ=",
 			"path": "github.com/denisenkom/go-mssqldb",
 			"revision": "4e0d7dc8888fbb59764060e99b7b68e77a6f9698",
